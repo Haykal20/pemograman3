@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Akademik - Haykal Furqan Shafiq</title>
 
+    <meta property="og:title" content="Dashboard Akademik - Haykal Furqan Shafiq">
+    <meta property="og:description" content="Rencana studi, detail mata kuliah, dan jadwal untuk Semester 3 Ilmu Komputer.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Haykal20/Haykal-Furqan-Shafiq/refs/heads/main/IMG_20250720_055010.jpg">
+    <meta property="og:url" content="https://pemograman.haykalfs.my.id/">
+    <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -429,3 +434,374 @@
     </script>
 </body>
 </html>
+
+        .course-header {
+            cursor: pointer;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .course-header h5 {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #0056b3;
+        }
+
+        .course-body {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .sks-badge {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-right: 1rem;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: #343a40;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .digital-clock {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-book-half"></i>
+                Dashboard Akademik
+            </a>
+            <div class="digital-clock" id="clock">
+                Memuat jam...
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+
+        <div class="card profile-card p-4 mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                    <img src="https://raw.githubusercontent.com/Haykal20/Haykal-Furqan-Shafiq/refs/heads/main/IMG_20250720_055010.jpg" alt="Foto Profil Haykal Furqan Shafiq" class="profile-img">
+                </div>
+                <div class="col-md-9">
+                    <h2 class="mb-1 fw-bold">Haykal Furqan Shafiq</h2>
+                    <p class="lead mb-2">NIM: 24210076</p>
+                    <hr class="border-light opacity-50">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong class="fw-semibold">Program Studi:</strong> S1 Ilmu Komputer</p>
+                            <p class="mb-1"><strong class="fw-semibold">Fakultas:</strong> Sains, Teknologi dan Ilmu Kesehatan</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong class="fw-semibold">Semester:</strong> III (Ganjil)</p>
+                            <p class="mb-1"><strong class="fw-semibold">Tahun Ajaran:</strong> 2025/2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">
+             <i class="bi bi-journals"></i>
+             Mata Kuliah Semester Ini (Total 23 SKS)
+        </h2>
+
+        <div class="accordion" id="courseAccordion">
+            
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-bar-chart-line-fill card-icon"></i>
+                        <div>
+                            <h5>Statistika Dasar</h5>
+                            <small class="text-muted">MKKD511</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse1" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Mata kuliah ini memberikan pemahaman mendasar tentang konsep dan metode statistika. Anda akan belajar cara mengumpulkan, mengorganisir, menyajikan, dan menganalisis data untuk menarik kesimpulan yang valid.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Statistik Deskriptif:</strong> Ukuran pemusatan data (mean, median, modus) dan ukuran penyebaran data (range, varians, standar deviasi).</li>
+                            <li><strong>Peluang (Probabilitas):</strong> Konsep dasar probabilitas, distribusi probabilitas diskrit dan kontinu.</li>
+                            <li><strong>Statistik Inferensial:</strong> Teori estimasi (pendugaan interval), uji hipotesis untuk satu dan dua populasi.</li>
+                            <li><strong>Analisis Regresi dan Korelasi:</strong> Mempelajari hubungan antara dua variabel atau lebih.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-shield-check card-icon"></i>
+                        <div>
+                            <h5>Etika Profesi</h5>
+                            <small class="text-muted">MKKD1017</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">2 SKS</span>
+                </div>
+                <div id="collapse2" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Mata kuliah ini membahas prinsip-prinsip etika, norma, dan hukum yang berlaku dalam profesi di bidang Teknologi Informasi. Tujuannya adalah membentuk profesional yang bertanggung jawab, sadar akan dampak sosial, dan menjunjung tinggi integritas.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Kode Etik Profesional:</strong> Standar perilaku bagi para profesional TI.</li>
+                            <li><strong>Privasi dan Keamanan Data:</strong> Perlindungan informasi pribadi dan keamanan siber.</li>
+                            <li><strong>Hak Kekayaan Intelektual (HKI):</strong> Hak cipta perangkat lunak, paten, dan lisensi.</li>
+                            <li><strong>Kejahatan Komputer (Cybercrime):</strong> Mengenali dan memahami berbagai bentuk kejahatan di dunia maya.</li>
+                            <li><strong>Tanggung Jawab Sosial:</strong> Dampak teknologi terhadap masyarakat dan lingkungan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-diagram-3-fill card-icon"></i>
+                        <div>
+                            <h5>Teori Bahasa dan Otomata</h5>
+                            <small class="text-muted">MKKL1034</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse3" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Ini adalah mata kuliah fundamental dalam ilmu komputer yang mempelajari model-model komputasi abstrak. Anda akan memahami bagaimana sebuah mesin dapat mengenali dan memproses bahasa, yang menjadi dasar dari perancangan *compiler* dan pemrosesan bahasa alami.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Finite Automata (FA):</strong> Mesin sederhana untuk mengenali bahasa reguler (Deterministic dan Non-Deterministic FA).</li>
+                            <li><strong>Ekspresi Reguler (Regular Expression):</strong> Notasi untuk mendefinisikan pola teks.</li>
+                            <li><strong>Tata Bahasa Bebas Konteks (Context-Free Grammar):</strong> Aturan untuk menghasilkan struktur sintaksis bahasa pemrograman.</li>
+                            <li><strong>Pushdown Automata:</strong> Otomata dengan memori tumpukan (stack) untuk mengenali bahasa bebas konteks.</li>
+                            <li><strong>Mesin Turing:</strong> Model komputasi paling kuat yang menjadi fondasi teori komputabilitas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-calculator-fill card-icon"></i>
+                        <div>
+                            <h5>Matematika Diskrit</h5>
+                            <small class="text-muted">MKKD1005</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse4" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Mata kuliah ini menyediakan landasan matematis untuk ilmu komputer. Berbeda dengan kalkulus yang kontinu, matematika diskrit berfokus pada objek-objek yang terhitung dan terpisah, yang sangat relevan untuk logika digital, algoritma, dan struktur data.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Logika Proposisional dan Predikat:</strong> Dasar dari penalaran dan pembuktian dalam komputasi.</li>
+                            <li><strong>Teori Himpunan:</strong> Operasi himpunan, relasi, dan fungsi.</li>
+                            <li><strong>Kombinatorika:</strong> Teknik berhitung (permutasi, kombinasi) untuk analisis algoritma.</li>
+                            <li><strong>Teori Graf:</strong> Representasi dan analisis jaringan, seperti jejaring sosial atau rute transportasi.</li>
+                            <li><strong>Induksi Matematika dan Rekursi:</strong> Teknik pembuktian dan dasar pemecahan masalah rekursif.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-robot card-icon"></i>
+                        <div>
+                            <h5>Pengantar Kecerdasan Buatan & Pemrograman AI</h5>
+                            <small class="text-muted">MKKD1010</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse5" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Sebagai gerbang awal ke dunia AI, mata kuliah ini memperkenalkan konsep, teknik, dan aplikasi dari kecerdasan buatan. Anda akan belajar bagaimana merancang agen cerdas yang dapat merasakan lingkungan dan mengambil tindakan, serta mempraktikkan dasar pemrogramannya.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Agen Cerdas:</strong> Konsep agen dan lingkungannya.</li>
+                            <li><strong>Problem Solving & Searching:</strong> Algoritma pencarian seperti Breadth-First Search (BFS), Depth-First Search (DFS), dan A*.</li>
+                            <li><strong>Representasi Pengetahuan:</strong> Cara merepresentasikan pengetahuan agar dapat diproses oleh komputer (logika, frame, semantic net).</li>
+                            <li><strong>Pengantar Machine Learning:</strong> Konsep dasar supervised, unsupervised, dan reinforcement learning.</li>
+                            <li><strong>Pemrograman AI:</strong> Praktik menggunakan bahasa seperti Python dengan library dasar untuk AI.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-gear-wide-connected card-icon"></i>
+                        <div>
+                            <h5>Desain dan Analisis Algoritma</h5>
+                            <small class="text-muted">MKL1001</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse6" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Mata kuliah ini mengajarkan cara merancang solusi komputasi yang efisien dan menganalisis kinerjanya. Kemampuan ini krusial untuk menulis kode yang tidak hanya benar, tetapi juga cepat dan hemat sumber daya.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Analisis Kompleksitas:</strong> Notasi Asimtotik (Big-O, Big-Omega, Big-Theta) untuk mengukur efisiensi waktu dan ruang.</li>
+                            <li><strong>Strategi Desain Algoritma:</strong>
+                                <ul>
+                                    <li><strong>Brute Force:</strong> Pendekatan paling dasar.</li>
+                                    <li><strong>Divide and Conquer:</strong> Memecah masalah menjadi sub-masalah (contoh: Merge Sort, Quick Sort).</li>
+                                    <li><strong>Greedy Algorithms:</strong> Membuat pilihan optimal lokal pada setiap langkah.</li>
+                                    <li><strong>Dynamic Programming:</strong> Menyimpan hasil sub-masalah untuk menghindari perhitungan ulang.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Algoritma Graf:</strong> Pencarian jalur terpendek (Dijkstra, Bellman-Ford), Minimum Spanning Tree (Prim, Kruskal).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse7">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-code-slash card-icon"></i>
+                        <div>
+                            <h5>Rekayasa Perangkat Lunak & Pemrograman AI</h5>
+                            <small class="text-muted">MKKD1012</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse7" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Mata kuliah ini fokus pada proses sistematis untuk membangun perangkat lunak berkualitas tinggi, dengan penekanan khusus pada proyek-proyek yang melibatkan komponen AI. Anda akan belajar siklus hidup pengembangan perangkat lunak (SDLC) dan metodologi modern.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Proses Perangkat Lunak:</strong> Model-model pengembangan (Waterfall, Agile, Scrum).</li>
+                            <li><strong>Manajemen Proyek PL:</strong> Estimasi, perencanaan, dan penjadwalan.</li>
+                            <li><strong>Analisis Kebutuhan:</strong> Mengidentifikasi dan mendokumentasikan apa yang harus dilakukan oleh sistem.</li>
+                            <li><strong>Desain Perangkat Lunak:</strong> Desain arsitektur, desain antarmuka (UI/UX), dan penggunaan UML.</li>
+                            <li><strong>Pengujian Perangkat Lunak:</strong> Strategi testing, unit testing, integration testing.</li>
+                            <li><strong>Tantangan RPL untuk AI:</strong> Manajemen data, pengujian model AI, dan etika dalam pengembangan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse8">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-rocket-takeoff-fill card-icon"></i>
+                        <div>
+                            <h5>Pengembangan Aplikasi AI & Pemrograman AI</h5>
+                            <small class="text-muted">MKKD1018</small>
+                        </div>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary-emphasis sks-badge">3 SKS</span>
+                </div>
+                <div id="collapse8" class="collapse" data-bs-parent="#courseAccordion">
+                    <div class="course-body">
+                        <strong>Deskripsi Pembelajaran:</strong><br>
+                        Sebagai mata kuliah terapan, di sini Anda akan mengaplikasikan pengetahuan AI dan RPL untuk membangun aplikasi cerdas secara *end-to-end*. Fokusnya adalah pada praktik, penggunaan *framework* modern, dan penyelesaian proyek nyata.
+                        <br><br>
+                        <strong>Topik Utama:</strong>
+                        <ul>
+                            <li><strong>Framework Machine Learning:</strong> Penggunaan library seperti Scikit-learn, TensorFlow, atau PyTorch untuk membangun model prediktif.</li>
+                            <li><strong>Pemrosesan Bahasa Alami (NLP):</strong> Membangun aplikasi seperti analisis sentimen, chatbot sederhana, atau klasifikasi teks.</li>
+                            <li><strong>Computer Vision:</strong> Pengenalan dasar deteksi objek atau klasifikasi gambar menggunakan library seperti OpenCV.</li>
+                            <li><strong>Deployment Model AI:</strong> Cara mengintegrasikan model AI yang sudah dilatih ke dalam aplikasi web atau mobile menggunakan API (misalnya dengan Flask atau FastAPI).</li>
+                            <li><strong>Proyek Akhir:</strong> Mengembangkan aplikasi AI fungsional dari ide hingga produk jadi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Universitas Bina Bangsa Getsempena | Dashboard ini dibuat untuk Haykal Furqan Shafiq</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Fungsi untuk Jam Digital
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            // Opsi untuk format waktu WIB (GMT+7)
+            const options = {
+                timeZone: 'Asia/Jakarta',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('id-ID', options);
+            clockElement.innerHTML = `<i class="bi bi-clock-history"></i> Waktu Indonesia: ${timeString} WIB`;
+        }
+
+        // Panggil fungsi updateClock setiap detik
+        setInterval(updateClock, 1000);
+
+        // Panggil sekali saat halaman dimuat
+        updateClock();
+    </script>
+</body>
+</html>
+
