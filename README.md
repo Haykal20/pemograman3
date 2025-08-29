@@ -4,7 +4,7 @@ Selamat datang di project Dashboard Akademik! Ini adalah halaman web statis yang
 
 Project ini dibuat dengan struktur kode yang bersih dan modular, memisahkan antara struktur (HTML), gaya (CSS), dan fungsionalitas (JavaScript).
 
-![Screenshot Dashboard](https://raw.githubusercontent.com/Haykal20/Haykal-Furqan-Shafiq/main/ss.png)
+![Screenshot Dashboard](https://raw.githubusercontent.com/Haykal20/Haykal-Furqan-Shafiq/main/ss.jpg)
 
 ---
 
