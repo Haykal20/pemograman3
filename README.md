@@ -1,10 +1,10 @@
-# Dashboard Akademik Mahasiswa 📚
+# Dashboard Akademik Imam Al Anjas📚
 
 Selamat datang di project Dashboard Akademik! Ini adalah halaman web statis yang dirancang untuk membantu mahasiswa melacak jadwal mata kuliah, detail SKS, dan informasi penting lainnya untuk satu semester.
 
 Project ini dibuat dengan struktur kode yang bersih dan modular, memisahkan antara struktur (HTML), gaya (CSS), dan fungsionalitas (JavaScript).
 
-![Screenshot Dashboard](https://raw.githubusercontent.com/Haykal20/pemograman3/main/Screenshot.png)
+![Screenshot Dashboard](https://raw.githubusercontent.com/Haykal20/Haykal-Furqan-Shafiq/main/ss.png)
 
 ---
 
