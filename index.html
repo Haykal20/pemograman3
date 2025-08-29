@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://pemograman.haykalfs.my.id/">
     <meta property="og:title" content="Dashboard Akademik - Imam Al Anjas">
     <meta property="og:description" content="Rencana studi, detail mata kuliah, dan jadwal untuk Semester 3 Ilmu Komputer.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Haykal20/Haykal-Furqan-Shafiq/main/anjas.jpg"> 
+    <meta property="og:image" content="https://raw.githubusercontent.com/Haykal20/pemograman3/main/anjas.jpg"> 
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -113,24 +113,35 @@
             text-align: center;
         }
         
-        .digital-clock {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #fff;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-        }
+.main-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+.navbar-brand-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.datetime-container {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+}
 
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
-        .bg-custom-purple {
+/* Kode di bawah ini tetap sama */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+.bg-custom-purple {
     background-color: #6f42c1;
     color: white;
 }
@@ -141,21 +152,29 @@
 .course-detail-item {
     margin-bottom: 0.3rem;
 }
+.course-card.course-active {
+    border-left: 5px solid #fd7e14; /* Garis oranye tebal di kiri */
+    background-color: #fffaf5; /* Latar belakang oranye sangat muda */
+    box-shadow: 0 8px 25px rgba(253, 126, 20, 0.2); /* Bayangan oranye */
+    transform: translateY(-5px);
+}
+.navbar-brand-title i {
+    margin-right: 0.75rem;
+    vertical-align: -2px; /* Menyesuaikan posisi ikon agar lebih pas */
+}
+
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-book-half"></i>
-                Dashboard Akademik
-            </a>
-            <div class="digital-clock" id="clock">
-                Memuat jam...
-            </div>
+<nav class="main-header shadow-sm">
+    <div class="container text-center">
+        <h1 class="navbar-brand-title"><i class="bi bi-grid-1x2-fill"></i>Dashboard</h1>        
+        <div class="datetime-container" id="datetime-container">
+            Memuat waktu...
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div class="container mt-5">
 
@@ -223,7 +242,7 @@
         </div>
     </div>
 
-    <div class="course-card">
+    <div class="course-card" data-day="1" data-start-time="10:40" data-end-time="12:20">
         <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse2">
             <i class="bi bi-shield-check card-icon"></i>
             <div class="flex-grow-1">
@@ -267,7 +286,7 @@
         </div>
     </div>
     
-    <div class="course-card">
+   <div class="course-card" data-day="3" data-start-time="15:40" data-end-time="18:10">
     <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse3">
         <i class="bi bi-diagram-3-fill card-icon"></i>
         <div class="flex-grow-1">
@@ -510,29 +529,64 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script>
-        // Fungsi untuk Jam Digital
-        function updateClock() {
-            const clockElement = document.getElementById('clock');
-            // Opsi untuk format waktu WIB (GMT+7)
-            const options = {
-                timeZone: 'Asia/Jakarta',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            };
-            const now = new Date();
-            const timeString = now.toLocaleTimeString('id-ID', options);
-            clockElement.innerHTML = `<i class="bi bi-clock-history"></i> Waktu Indonesia: ${timeString} WIB`;
-        }
+   <script>
+    const dateTimeElement = document.getElementById('datetime-container');
+    const courseCards = document.querySelectorAll('.course-card');
 
-        // Panggil fungsi updateClock setiap detik
-        setInterval(updateClock, 1000);
+    const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+    const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
-        // Panggil sekali saat halaman dimuat
-        updateClock();
-    </script>
+    function updateDateTime() {
+    const now = new Date();
+    
+    // Format Waktu
+    const timeOptions = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    const timeString = now.toLocaleTimeString('id-ID', timeOptions);
+
+    // Format Tanggal
+    const dayName = dayNames[now.getDay()];
+    const date = now.getDate();
+    const monthName = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    const dateString = `${dayName}, ${date} ${monthName} ${year}`;
+
+    // Gabungkan dan tampilkan di satu tempat
+    dateTimeElement.innerHTML = `<span>${dateString}</span> &bull; <i class="bi bi-clock-history"></i> <span>${timeString} WIB</span>`;
+}
+
+    function updateCourseStatus() {
+        const now = new Date();
+        const currentDay = now.getDay();
+        const currentTime = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+
+        courseCards.forEach(card => {
+            const courseDay = card.dataset.day;
+            const startTime = card.dataset.startTime;
+            const endTime = card.dataset.endTime;
+
+            // Hapus status aktif jika ada
+            card.classList.remove('course-active');
+
+            // Cek jika kartu ini punya jadwal
+            if (courseDay && startTime && endTime) {
+                // Cek jika hari dan jamnya sesuai
+                if (parseInt(courseDay) === currentDay && currentTime >= startTime && currentTime < endTime) {
+                    card.classList.add('course-active');
+                }
+            }
+        });
+    }
+
+    // Jalankan kedua fungsi setiap detik untuk menjaga akurasi
+    setInterval(() => {
+        updateDateTime();
+        updateCourseStatus();
+    }, 1000);
+
+    // Jalankan sekali saat halaman pertama kali dimuat
+    updateDateTime();
+    updateCourseStatus();
+</script>
 </body>
 
 </html>
