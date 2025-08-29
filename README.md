@@ -40,15 +40,15 @@ Project ini diatur dengan struktur yang rapi agar mudah dipahami dan dikelola.
 
 ```
 .
-├── 📄 index.html        # Kerangka utama halaman dashboard
+├── 📄 index.html  #Kerangka utama halaman dashboard
 ├── 📁 folder/
-│   ├── 📄 kal.html      # Berisi HANYA daftar mata kuliah
-│   ├── 📄 kal.css       # Semua aturan styling (CSS)
-│   └── 📄 kal.js        # Semua fungsionalitas (JavaScript)
+│   ├── 📄 kal.html  #Berisi HANYA daftar mata kuliah
+│   ├── 📄 kal.css  #Semua aturan styling (CSS)
+│   └── 📄 kal.js  #Semua fungsionalitas (JavaScript)
 ├── 📁 foto/
-│   ├── 🖼️ anjas.jpg     # Foto profil
-│   └── 🖼️ honkai.png    # Favicon halaman
-└── 📄 README.md         # File ini (dokumentasi project)
+│   ├── 🖼️ anjas.jpg  #Foto profil
+│   └── 🖼️ honkai.png  #Favicon halaman
+└── 📄 README.md  #File ini (dokumentasi project)
 ```
 
 ---
@@ -72,13 +72,13 @@ Karena ini adalah project web statis, Anda tidak memerlukan server khusus untuk 
 ## ✏️ Cara Kustomisasi
 
 ### Mengubah Informasi Profil
-Buka file `index.html` dan edit bagian di dalam `` untuk mengubah nama, NIM, hobi, dan gambar profil.
+Buka file `index.html` dan edit bagian di dalam `Navbar header` untuk mengubah nama, NIM, hobi, dan gambar profil.
 
 ### Menambah atau Mengubah Mata Kuliah
 Semua data mata kuliah disimpan di file `kal.html`.
 
 1.  Buka file `kal.html`.
-2.  Untuk menambah mata kuliah baru, salin blok kode yang sudah ditandai di bagian ``.
+2.  Untuk menambah mata kuliah baru, salin blok kode yang sudah ditandai di bagian `bawah`.
 3.  Tempel di bawah mata kuliah terakhir.
 4.  **Penting:** Ubah `id` dan `data-bs-target` ke nomor unik (misal: `#collapse9` dan `id="collapse9"`).
 5.  Ubah detail lainnya seperti nama mata kuliah, SKS, jadwal, dan deskripsi.
