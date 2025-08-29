@@ -36,14 +36,15 @@ Project ini diatur dengan struktur yang rapi agar mudah dipahami dan dikelola.
 
 ```
 .
-├── 📄 index.html      # Kerangka utama halaman dashboard
-├── 📄 kal.html        # Berisi HANYA daftar mata kuliah (mudah diedit)
-├── 📄 kal.css         # Semua aturan styling (CSS)
-├── 📄 kal.js          # Semua fungsionalitas (JavaScript)
+├── 📄 index.html        # Kerangka utama halaman dashboard
+├── 📁 folder/
+│   ├── 📄 kal.html      # Berisi HANYA daftar mata kuliah
+│   ├── 📄 kal.css       # Semua aturan styling (CSS)
+│   └── 📄 kal.js        # Semua fungsionalitas (JavaScript)
 ├── 📁 foto/
-│   ├── 🖼️ anjas.jpg   # Foto profil
-│   └── 🖼️ honkai.png  # Favicon halaman
-└── 📄 README.md       # File ini (dokumentasi project)
+│   ├── 🖼️ anjas.jpg     # Foto profil
+│   └── 🖼️ honkai.png    # Favicon halaman
+└── 📄 README.md         # File ini (dokumentasi project)
 ```
 
 ---
