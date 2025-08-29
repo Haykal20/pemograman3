@@ -1,0 +1,165 @@
+/* Haykalf.s */
+/* Tempat custom style css */
+
+/* Styling utama untuk seluruh halaman */
+body {
+    font-family: 'Poppins', sans-serif; /* Font dari Google Fonts */
+    background-color: #f0f2f5; /* Warna latar belakang abu-abu terang */
+    color: #333; /* Warna teks utama */
+}
+
+/* Branding teks di navbar */
+.navbar-brand {
+    font-weight: 700;
+}
+
+/* Card profil mahasiswa */
+.profile-card {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Gradasi biru */
+    color: white; /* Teks putih */
+    border-radius: 1rem; /* Sudut membulat */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Bayangan */
+    transition: transform 0.3s ease; /* Animasi hover */
+}
+
+/* Efek hover pada profile-card */
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Foto profil bulat */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Bulat sempurna */
+    border: 4px solid rgba(255, 255, 255, 0.5); /* Bingkai transparan */
+    object-fit: cover; /* Supaya gambar tidak melar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card untuk mata kuliah */
+.course-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+/* Efek hover course-card */
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header untuk course-card */
+.course-header {
+    cursor: pointer; /* Bisa diklik */
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Judul di header course */
+.course-header h5 {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #0056b3;
+}
+
+/* Isi detail course */
+.course-body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Badge untuk SKS */
+.sks-badge {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Icon di dalam card */
+.card-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-right: 1rem;
+}
+
+/* Judul section */
+.section-title {
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Header utama navbar */
+.main-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+/* Teks judul di navbar */
+.navbar-brand-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Container jam & tanggal */
+.datetime-container {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-top: 0.5rem;
+}
+
+/* Footer halaman */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Warna custom tambahan */
+.bg-custom-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.bg-custom-secondary {
+    background-color: #c82333; 
+    color: white;
+}
+
+/* Item detail di dalam course */
+.course-detail-item {
+    margin-bottom: 0.3rem;
+}
+
+/* Course card aktif */
+.course-card.course-active {
+    border-left: 5px solid #fd7e14; /* Garis oranye di kiri */
+    background-color: #fffaf5; /* Latar belakang krem */
+    box-shadow: 0 8px 25px rgba(253, 126, 20, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Icon di navbar */
+.navbar-brand-title i {
+    margin-right: 0.75rem;
+    vertical-align: -2px;
+}
+
+/* Tempat custom style css */
+/* Haykalf.s */

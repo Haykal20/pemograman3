@@ -1,596 +1,112 @@
+<!--Haykalf.s-->
+<!--Tempat halaman dashboard-->
+	
+<!-- Metadata dasar -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Akademik - Imam Al Anjas</title>
-
     <meta name="description" content="Dashboard akademik Imam Al Anjas, berisi rencana studi, detail mata kuliah, dan jadwal untuk Semester 3 Ilmu Komputer.">
-
     <meta name="google-site-verification" content="I0SeK2KH9yapwdUtLMUBCr2SSm3Ah3NlEPg17oGsDM0" />
-    
     <link rel="canonical" href="https://pemograman.haykalfs.my.id/">
     
-    <link rel="icon" href="honkai.png" type="image/png">
+<!-- Favicon -->
+    <link rel="icon" href="foto/honkai.png" type="image/png">
+    
+<!-- Open Graph (untuk share ke sosmed) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pemograman.haykalfs.my.id/">
     <meta property="og:title" content="Dashboard Akademik - Imam Al Anjas">
     <meta property="og:description" content="Rencana studi, detail mata kuliah, dan jadwal untuk Semester 3 Ilmu Komputer.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/Haykal20/pemograman3/main/anjas.jpg"> 
+    <meta property="og:image" content="https://raw.githubusercontent.com/Haykal20/pemograman3/foto/main/anjas.jpg"> 
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
+<!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
 
-    <style>
-        /* CSS Kustom untuk Tampilan Modern */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-        }
-
-        .profile-card {
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.5);
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .course-card {
-            background-color: #ffffff;
-            border: none;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 1.5rem;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-      .course-header {
-    cursor: pointer;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /*<-- UBAH MENJADI flex-start */
-}
-
-        
-        .course-header h5 {
-            margin-bottom: 0;
-            font-weight: 600;
-            color: #0056b3;
-        }
-
-        .course-body {
-            padding: 0 1.5rem 1.5rem 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .sks-badge {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .card-icon {
-            font-size: 1.5rem;
-            color: #007bff;
-            margin-right: 1rem;
-        }
-        
-        .section-title {
-            font-weight: 700;
-            color: #343a40;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-.main-header {
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
-    padding: 1.5rem 1rem;
-    text-align: center;
-}
-.navbar-brand-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-.datetime-container {
-    font-size: 0.95rem;
-    opacity: 0.85;
-    margin-top: 0.5rem;
-}
-
-/* Kode di bawah ini tetap sama */
-.footer {
-    background-color: #343a40;
-    color: white;
-    padding: 1.5rem 0;
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 0.9rem;
-}
-.bg-custom-purple {
-    background-color: #6f42c1;
-    color: white;
-}
-.bg-custom-secondary {
-    background-color: #c82333; 
-    color: white;
-}
-.course-detail-item {
-    margin-bottom: 0.3rem;
-}
-.course-card.course-active {
-    border-left: 5px solid #fd7e14; /* Garis oranye tebal di kiri */
-    background-color: #fffaf5; /* Latar belakang oranye sangat muda */
-    box-shadow: 0 8px 25px rgba(253, 126, 20, 0.2); /* Bayangan oranye */
-    transform: translateY(-5px);
-}
-.navbar-brand-title i {
-    margin-right: 0.75rem;
-    vertical-align: -2px; /* Menyesuaikan posisi ikon agar lebih pas */
-}
-
-    </style>
+<!-- CSS custom -->
+    <link rel="stylesheet" href="folder/kal.css">
 </head>
 <body>
 
+<!-- Navbar header -->
 <nav class="main-header shadow-sm">
     <div class="container text-center">
-        <h1 class="navbar-brand-title"><i class="bi bi-grid-1x2-fill"></i>Dashboard🥰</h1>        
+        <h1 class="navbar-brand-title"><i class="bi bi-grid-1x2-fill"></i>Dashboard </h1>        
         <div class="datetime-container" id="datetime-container">
             Memuat waktu...
         </div>
     </div>
 </nav>
 
-    <div class="container mt-5">
+<!-- Konten utama -->
+<div class="container mt-5">
 
-        <div class="card profile-card p-4 mb-5">
-    <div class="row align-items-center">
-        <div class="col-md-3 text-center">
-            <img src="anjas.jpg" alt="Foto Profil Imam Al Anjas" class="profile-img">
-        </div>
-        <div class="col-md-9">
-            <h2 class="mb-1 fw-bold d-flex justify-content-between">
-                <span>Imam Al Anjas</span>
-                <span>😱😱😱</span>
-            </h2>
-            <p class="lead mb-2 d-flex justify-content-between">
-                <span>NIM: 24210051</span>
-                <span>Sangat jago</span>
-            </p>
-            <hr class="border-light opacity-50">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-1"><strong class="fw-semibold">Hobi:</strong> Bermain Epep membantai citer</p>
-                    <p class="mb-1"><strong class="fw-semibold">Rival abadi:</strong> Epos rasya rasyid😱😰😹</p>
-                </div>
-                <div class="col-md-6">
-                    <p class="mb-1"><strong class="fw-semibold">Pangkat:</strong> Grand Master</p>
-                    <p class="mb-1"><strong class="fw-semibold">Bermain Selama:</strong> 2019/2025 ygy😹</p>
-                </div>
+<!-- Card profil mahasiswa -->
+    <div class="card profile-card p-4 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-center">
+                <img src="foto/anjas.jpg" alt="Foto Profil Imam Al Anjas" class="profile-img">
             </div>
-        </div>
-    </div>
-</div>
-        
-        <h2 class="section-title">
-             <i class="bi bi-journals"></i>
-             Mata Kuliah Semester Ini (Total 23 SKS)
-        </h2>
-
-        <div class="accordion" id="courseAccordion">
-            
-    <div class="course-card">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse1">
-            <i class="bi bi-bar-chart-line-fill card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Statistika Dasar</h5>
-                </div>
-                <div>
-                    <small class="text-muted">MKKD511 | 3 SKS</small>
-                </div>
-            </div>
-        </div>
-        <div id="collapse1" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Mata kuliah ini memberikan pemahaman mendasar tentang konsep dan metode statistika. Anda akan belajar cara mengumpulkan, mengorganisir, menyajikan, dan menganalisis data untuk menarik kesimpulan yang valid.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Statistik Deskriptif:</strong> Ukuran pemusatan data (mean, median, modus) dan ukuran penyebaran data (range, varians, standar deviasi).</li>
-                    <li><strong>Peluang (Probabilitas):</strong> Konsep dasar probabilitas, distribusi probabilitas diskrit dan kontinu.</li>
-                    <li><strong>Statistik Inferensial:</strong> Teori estimasi (pendugaan interval), uji hipotesis untuk satu dan dua populasi.</li>
-                    <li><strong>Analisis Regresi dan Korelasi:</strong> Mempelajari hubungan antara dua variabel atau lebih.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="course-card" data-day="1" data-start-time="10:40" data-end-time="12:20">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse2">
-            <i class="bi bi-shield-check card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Etika Profesi</h5>
-                    <span class="badge bg-custom-purple">Rombel C</span>
-                </div>
-                <div class="mb-2">
-                    <small class="text-muted">MKKD1017 | 2 SKS</small>
-                </div>
-                <div class="course-details text-muted" style="font-size: 0.85em;">
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                        <span>Khairuman, S.Kom, M.Kom / Nazuarsyah, ST, MT</span>
+            <div class="col-md-9">
+                <h2 class="mb-1 fw-bold d-flex justify-content-between">
+                    <span>Imam Al Anjas</span>
+                    <span>   😱😱😱</span>
+                </h2>
+                <p class="lead mb-2 d-flex justify-content-between">
+                    <span>NIM: 24210051</span>
+                    <span>Sangat jago</span>
+                </p>
+                <hr class="border-light opacity-50">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong class="fw-semibold">Hobi:</strong> Bermain Epep membantai citer</p>
+                        <p class="mb-1"><strong class="fw-semibold">Rival abadi:</strong> Epos rasya rasyid  😱😰😹</p>
                     </div>
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-calendar-week me-2" style="width: 16px;"></i>
-                        <span>Senin, 10:40 - 12:20 (100 menit)</span>
-                    </div>
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-geo-alt-fill me-2" style="width: 16px;"></i>
-                        <span>Ruang C.III.10 Lab Komputer 02 (Gedung C, Lt. 3)</span>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong class="fw-semibold">Pangkat:</strong> Grand Master</p>
+                        <p class="mb-1"><strong class="fw-semibold">Bermain Selama:</strong> 2019/2025 ygy 😹</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="collapse2" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Mata kuliah ini membahas prinsip-prinsip etika, norma, dan hukum yang berlaku dalam profesi di bidang Teknologi Informasi. Tujuannya adalah membentuk profesional yang bertanggung jawab, sadar akan dampak sosial, dan menjunjung tinggi integritas.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Kode Etik Profesional:</strong> Standar perilaku bagi para profesional TI.</li>
-                    <li><strong>Privasi dan Keamanan Data:</strong> Perlindungan informasi pribadi dan keamanan siber.</li>
-                    <li><strong>Hak Kekayaan Intelektual (HKI):</strong> Hak cipta perangkat lunak, paten, dan lisensi.</li>
-                    <li><strong>Kejahatan Komputer (Cybercrime):</strong> Mengenali dan memahami berbagai bentuk kejahatan di dunia maya.</li>
-                    <li><strong>Tanggung Jawab Sosial:</strong> Dampak teknologi terhadap masyarakat dan lingkungan.</li>
-                </ul>
             </div>
         </div>
     </div>
     
-   <div class="course-card" data-day="3" data-start-time="15:40" data-end-time="18:10">
-    <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse3">
-        <i class="bi bi-diagram-3-fill card-icon"></i>
-        <div class="flex-grow-1">
-            <div class="d-flex justify-content-between align-items-start">
-                <h5 class="mb-1">Teori Bahasa dan Otomata</h5>
-                <span class="badge bg-custom-purple">Rombel C</span>
-            </div>
-            <div class="mb-2">
-                <small class="text-muted">MKKL1034 | 3 SKS</small>
-            </div>
-            <div class="course-details text-muted" style="font-size: 0.85em;">
-                <div class="d-flex align-items-center course-detail-item">
-                    <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                    <span>Oktalia Triananda Lovita, S.ST. MT / Bakruddin, S.Si. M.T</span>
-                </div>
-                <div class="d-flex align-items-center course-detail-item">
-                    <i class="bi bi-calendar-week me-2" style="width: 16px;"></i>
-                    <span>Rabu, 15:40 (150 menit)</span>
-                </div>
-                <div class="d-flex align-items-center course-detail-item">
-                    <i class="bi bi-geo-alt-fill me-2" style="width: 16px;"></i>
-                    <span>Ruang C.II.01 LAB CBT 01 (Gedung C, Lt. 2)</span>
-                </div>
-            </div>
+<!-- Bagian mata kuliah -->
+    <h2 class="section-title">
+         <i class="bi bi-journals"></i>
+         Mata Kuliah Semester Ini (Total 23 SKS)
+    </h2>
+
+ <!-- Accordion untuk daftar mata kuliah -->
+    <div class="accordion" id="courseAccordion">
         </div>
-    </div>
-    <div id="collapse3" class="collapse" data-bs-parent="#courseAccordion">
-        <div class="course-body">
-            <strong>Deskripsi Pembelajaran:</strong><br>
-            Ini adalah mata kuliah fundamental dalam ilmu komputer yang mempelajari model-model komputasi abstrak. Anda akan memahami bagaimana sebuah mesin dapat mengenali dan memproses bahasa, yang menjadi dasar dari perancangan *compiler* dan pemrosesan bahasa alami.
-            <br><br>
-            <strong>Topik Utama:</strong>
-            <ul>
-                <li><strong>Finite Automata (FA):</strong> Mesin sederhana untuk mengenali bahasa reguler (Deterministic dan Non-Deterministic FA).</li>
-                <li><strong>Ekspresi Reguler (Regular Expression):</strong> Notasi untuk mendefinisikan pola teks.</li>
-                <li><strong>Tata Bahasa Bebas Konteks (Context-Free Grammar):</strong> Aturan untuk menghasilkan struktur sintaksis bahasa pemrograman.</li>
-                <li><strong>Pushdown Automata:</strong> Otomata dengan memori tumpukan (stack) untuk mengenali bahasa bebas konteks.</li>
-                <li><strong>Mesin Turing:</strong> Model komputasi paling kuat yang menjadi fondasi teori komputabilitas.</li>
-            </ul>
-        </div>
-    </div>
 </div>
 
-
-    <div class="course-card">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse4">
-            <i class="bi bi-calculator-fill card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Matematika Diskrit</h5>
-                    <span class="badge bg-custom-purple">Rombel C</span>
-                </div>
-                <div class="mb-2">
-                    <small class="text-muted">MKKD1005 | 3 SKS</small>
-                </div>
-                <div class="course-details text-muted" style="font-size: 0.85em;">
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                        <span>Dosen: Rossiana Br Ginting, S.Kom, M.Pd</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="collapse4" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Mata kuliah ini menyediakan landasan matematis untuk ilmu komputer. Berbeda dengan kalkulus yang kontinu, matematika diskrit berfokus pada objek-objek yang terhitung dan terpisah, yang sangat relevan untuk logika digital, algoritma, dan struktur data.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Logika Proposisional dan Predikat:</strong> Dasar dari penalaran dan pembuktian dalam komputasi.</li>
-                    <li><strong>Teori Himpunan:</strong> Operasi himpunan, relasi, dan fungsi.</li>
-                    <li><strong>Kombinatorika:</strong> Teknik berhitung (permutasi, kombinasi) untuk analisis algoritma.</li>
-                    <li><strong>Teori Graf:</strong> Representasi dan analisis jaringan, seperti jejaring sosial atau rute transportasi.</li>
-                    <li><strong>Induksi Matematika dan Rekursi:</strong> Teknik pembuktian dan dasar pemecahan masalah rekursif.</li>
-                </ul>
-            </div>
-        </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p class="mb-0">&copy; 2025 Universitas Bina Bangsa Getsempena | Dashboard ini dibuat oleh Imam Al Anjas sangat jago</p>
     </div>
+</footer>
 
-    <div class="course-card">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse5">
-            <i class="bi bi-database-fill card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Pengantar Basis Data</h5>
-                    <span class="badge bg-custom-secondary">Rombel B</span>
-                </div>
-                <div class="mb-2">
-                    <small class="text-muted">MKKD1010 | 3 SKS</small>
-                </div>
-                <div class="course-details text-muted" style="font-size: 0.85em;">
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                        <span>Dosen: Mohd. Iqbal Muttaqin / Oktalia Triananda Lovita, S.ST. MT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="collapse5" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Mata kuliah ini memperkenalkan konsep fundamental dari sistem basis data. Anda akan belajar bagaimana merancang, membuat, dan mengelola database yang terstruktur dan efisien untuk menyimpan dan mengakses data dalam pengembangan aplikasi.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Konsep Dasar:</strong> Pengenalan data, basis data, DBMS (Database Management System), dan arsitektur sistem basis data.</li>
-                    <li><strong>Model Data Relasional:</strong> Memahami struktur tabel, baris (tuple), kolom (attribute), serta kunci primer (primary key) dan kunci asing (foreign key).</li>
-                    <li><strong>SQL (Structured Query Language):</strong> Bahasa standar untuk berinteraksi dengan basis data, mencakup DDL (CREATE, ALTER) dan DML (SELECT, INSERT, UPDATE, DELETE).</li>
-                    <li><strong>Perancangan Basis Data:</strong> Menggunakan ERD (Entity-Relationship Diagram) untuk memodelkan data.</li>
-                    <li><strong>Normalisasi:</strong> Teknik untuk mengoptimalkan struktur tabel dan mengurangi redundansi data (1NF, 2NF, 3NF).</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <div class="course-card">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse6">
-            <i class="bi bi-gear-wide-connected card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Desain dan Analisis Algoritma</h5>
-                    <span class="badge bg-custom-secondary">Rombel B</span>
-                </div>
-                <div class="mb-2">
-                    <small class="text-muted">MKL1001 | 3 SKS</small>
-                </div>
-                <div class="course-details text-muted" style="font-size: 0.85em;">
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                        <span>Dosen: Oktalia Triananda Lovita, S.ST. MT / Bakruddin, S.Si. M.T</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="collapse6" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Mata kuliah ini mengajarkan cara merancang solusi komputasi yang efisien dan menganalisis kinerjanya. Kemampuan ini krusial untuk menulis kode yang tidak hanya benar, tetapi juga cepat dan hemat sumber daya.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Analisis Kompleksitas:</strong> Notasi Asimtotik (Big-O, Big-Omega, Big-Theta) untuk mengukur efisiensi waktu dan ruang.</li>
-                    <li><strong>Strategi Desain Algoritma:</strong>
-                        <ul>
-                            <li><strong>Brute Force:</strong> Pendekatan paling dasar.</li>
-                            <li><strong>Divide and Conquer:</strong> Memecah masalah menjadi sub-masalah (contoh: Merge Sort, Quick Sort).</li>
-                            <li><strong>Greedy Algorithms:</strong> Membuat pilihan optimal lokal pada setiap langkah.</li>
-                            <li><strong>Dynamic Programming:</strong> Menyimpan hasil sub-masalah untuk menghindari perhitungan ulang.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Algoritma Graf:</strong> Pencarian jalur terpendek (Dijkstra, Bellman-Ford), Minimum Spanning Tree (Prim, Kruskal).</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <div class="course-card">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse7">
-            <i class="bi bi-code-slash card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Rekayasa Perangkat Lunak</h5>
-                    <span class="badge bg-custom-secondary">Rombel B</span>
-                </div>
-                <div class="mb-2">
-                    <small class="text-muted">MKKD1012 | 3 SKS</small>
-                </div>
-                <div class="course-details text-muted" style="font-size: 0.85em;">
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                        <span>Dosen: Nazuarsyah, ST, MT</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="collapse7" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Mata kuliah ini mengajarkan pendekatan yang disiplin dan sistematis untuk merancang, mengembangkan, menguji, dan memelihara perangkat lunak. Tujuannya adalah agar Anda mampu membangun aplikasi yang berkualitas tinggi, andal, dan mudah dirawat sesuai dengan kebutuhan pengguna.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Proses Perangkat Lunak:</strong> Mempelajari berbagai model siklus hidup pengembangan perangkat lunak (SDLC), seperti Waterfall, Agile, dan Scrum.</li>
-                    <li><strong>Analisis Kebutuhan:</strong> Teknik untuk mengumpulkan, menganalisis, dan mendokumentasikan kebutuhan pengguna (requirements).</li>
-                    <li><strong>Desain Perangkat Lunak:</strong> Merancang arsitektur sistem, desain antarmuka pengguna (UI/UX), dan membuat model menggunakan UML (Unified Modeling Language).</li>
-                    <li><strong>Manajemen Proyek:</strong> Dasar-dasar perencanaan, estimasi biaya dan waktu, serta manajemen risiko dalam proyek perangkat lunak.</li>
-                    <li><strong>Pengujian & Kualitas:</strong> Strategi untuk memastikan perangkat lunak bebas dari eror melalui berbagai level pengujian (unit, integrasi, sistem).</li>
-                    <li><strong>Pemeliharaan Perangkat Lunak:</strong> Memahami jenis-jenis pemeliharaan dan cara mengelola perubahan setelah perangkat lunak dirilis.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<!-- Script Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <div class="course-card">
-        <div class="course-header" data-bs-toggle="collapse" data-bs-target="#collapse8">
-            <i class="bi bi-rocket-takeoff-fill card-icon"></i>
-            <div class="flex-grow-1">
-                <div class="d-flex justify-content-between align-items-start">
-                    <h5 class="mb-1">Pengembangan Aplikasi AI</h5>
-                    <span class="badge bg-custom-secondary">Rombel B</span>
-                </div>
-                <div class="mb-2">
-                    <small class="text-muted">MKKD1018 | 3 SKS</small>
-                </div>
-                <div class="course-details text-muted" style="font-size: 0.85em;">
-                    <div class="d-flex align-items-center course-detail-item">
-                        <i class="bi bi-person-video me-2" style="width: 16px;"></i>
-                        <span>Dosen: Zharifah Muthi'ah, S.T., M.T</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="collapse8" class="collapse" data-bs-parent="#courseAccordion">
-            <div class="course-body">
-                <strong>Deskripsi Pembelajaran:</strong><br>
-                Sebagai mata kuliah terapan, di sini Anda akan mengaplikasikan pengetahuan AI dan RPL untuk membangun aplikasi cerdas secara *end-to-end*. Fokusnya adalah pada praktik, penggunaan *framework* modern, dan penyelesaian proyek nyata.
-                <br><br>
-                <strong>Topik Utama:</strong>
-                <ul>
-                    <li><strong>Framework Machine Learning:</strong> Penggunaan library seperti Scikit-learn, TensorFlow, atau PyTorch untuk membangun model prediktif.</li>
-                    <li><strong>Pemrosesan Bahasa Alami (NLP):</strong> Membangun aplikasi seperti analisis sentimen, chatbot sederhana, atau klasifikasi teks.</li>
-                    <li><strong>Computer Vision:</strong> Pengenalan dasar deteksi objek atau klasifikasi gambar menggunakan library seperti OpenCV.</li>
-                    <li><strong>Deployment Model AI:</strong> Cara mengintegrasikan model AI yang sudah dilatih ke dalam aplikasi web atau mobile menggunakan API (misalnya dengan Flask atau FastAPI).</li>
-                    <li><strong>Proyek Akhir:</strong> Mengembangkan aplikasi AI fungsional dari ide hingga produk jadi.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<!-- Javascript custom -->
+<script src="folder/kal.js"></script>
 
-</div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p class="mb-0">&copy; 2025 Universitas Bina Bangsa Getsempena | Dashboard ini dibuat oleh Imam Al Anjas sangat jago</p>
-        </div>
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-   <script>
-    const dateTimeElement = document.getElementById('datetime-container');
-    const courseCards = document.querySelectorAll('.course-card');
-
-    const dayNames = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-    const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-
-    function updateDateTime() {
-    const now = new Date();
-    
-    // Format Waktu
-    const timeOptions = { timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-    const timeString = now.toLocaleTimeString('id-ID', timeOptions);
-
-    // Format Tanggal
-    const dayName = dayNames[now.getDay()];
-    const date = now.getDate();
-    const monthName = monthNames[now.getMonth()];
-    const year = now.getFullYear();
-    const dateString = `${dayName}, ${date} ${monthName} ${year}`;
-
-    // Gabungkan dan tampilkan di satu tempat
-    dateTimeElement.innerHTML = `<span>${dateString}</span> &bull; <i class="bi bi-clock-history"></i> <span>${timeString} WIB</span>`;
-}
-
-    function updateCourseStatus() {
-        const now = new Date();
-        const currentDay = now.getDay();
-        const currentTime = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-
-        courseCards.forEach(card => {
-            const courseDay = card.dataset.day;
-            const startTime = card.dataset.startTime;
-            const endTime = card.dataset.endTime;
-
-            // Hapus status aktif jika ada
-            card.classList.remove('course-active');
-
-            // Cek jika kartu ini punya jadwal
-            if (courseDay && startTime && endTime) {
-                // Cek jika hari dan jamnya sesuai
-                if (parseInt(courseDay) === currentDay && currentTime >= startTime && currentTime < endTime) {
-                    card.classList.add('course-active');
-                }
-            }
-        });
-    }
-
-    // Jalankan kedua fungsi setiap detik untuk menjaga akurasi
-    setInterval(() => {
-        updateDateTime();
-        updateCourseStatus();
-    }, 1000);
-
-    // Jalankan sekali saat halaman pertama kali dimuat
-    updateDateTime();
-    updateCourseStatus();
-</script>
 </body>
-
 </html>
 
-
-
-
+<!--Tempat halaman dashboard-->
+<!--Haykalf.s-->
