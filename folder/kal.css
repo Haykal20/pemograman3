@@ -112,6 +112,8 @@ body {
     margin: 0;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    position: relative; /* TAMBAHKAN INI */
+    display: inline-block; /* Tambahkan ini agar posisi relatif bekerja dengan baik */
 }
 
 /* Container jam & tanggal */
@@ -369,10 +371,11 @@ body.dark-mode .custom-schedule-table small.text-muted {
 /* STYLE UNTUK IKON TEMA DI SAMPING JUDUL                  */
 /* ======================================================= */
 .theme-icon-container {
-    position: absolute; /* Posisi absolut di dalam header */
-    top: 12%;           /* Turun 12% dari atas */
-    right: 15px;        /* Jarak 15px dari kanan */
-    transform: translateY(-12%); /* Naik lagi 12% dari tingginya sendiri agar pas di tengah */
+    position: absolute;          /* Posisi absolut relatif terhadap judul H1 */
+    left: 100%;                  /* Mulai dari ujung kanan judul */
+    margin-left: 15px;           /* Beri jarak 15px dari judul */
+    top: 50%;                    /* Posisikan di tengah secara vertikal */
+    transform: translateY(-50%); /* Koreksi posisi vertikal agar pas di tengah */
     width: 24px;
     height: 24px;
     cursor: pointer;
