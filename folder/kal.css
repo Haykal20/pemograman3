@@ -244,6 +244,29 @@ body {
         font-weight: bold;
         color: #333;
     }
+
+    /* ======================================================= */
+    /* PERBAIKAN: Mode Gelap untuk Tampilan Card di HP         */
+    /* ======================================================= */
+    body.dark-mode .custom-schedule-table tr {
+        /* Warna latar belakang dan border card di mode gelap */
+        background-color: #1F2937;
+        border: 1px solid #374151;
+    }
+
+    body.dark-mode .custom-schedule-table td {
+        /* Warna border pemisah antar baris di dalam card */
+        border-bottom: 1px solid #374151;
+    }
+
+    body.dark-mode .custom-schedule-table td:last-child {
+        border-bottom: none;
+    }
+
+    body.dark-mode .custom-schedule-table td::before {
+        /* Warna teks untuk label (Hari, Pukul, dll) */
+        color: #9CA3AF;
+    }
 }
 
 /* ======================================================= */
@@ -341,13 +364,32 @@ body.dark-mode .course-card small.text-muted {
 }
 
 /* Tabel Jadwal */
+/* Tabel Jadwal (Versi Perbaikan) */
 body.dark-mode .custom-schedule-table th {
-    background-color: #111827;
+    background-color: #111827 !important; /* !important untuk memaksa override */
     color: #D1D5DB;
     border-bottom: 2px solid #374151;
 }
+
 body.dark-mode .custom-schedule-table td {
+    background-color: #1F2937; /* INI YANG TERLEWAT */
     color: #D1D5DB;
+}
+
+body.dark-mode .custom-schedule-table tbody tr {
+    border-bottom: 1px solid #374151;
+}
+
+body.dark-mode .custom-schedule-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4B5563;
+}
+
+body.dark-mode .custom-schedule-table tbody tr:hover td { /* Targetkan td saat hover */
+    background-color: #374151;
+}
+
+body.dark-mode .custom-schedule-table small.text-muted {
+    color: #9CA3AF !important;
 }
 body.dark-mode .custom-schedule-table tbody tr {
     border-bottom: 1px solid #374151;
