@@ -1,37 +1,44 @@
 // File: folder/theme.js
-// Logika untuk Mode Gelap
+// Logika untuk Mode Gelap dengan Ikon di Samping Judul
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Cari tombol toggle dan body
-    const themeToggle = document.getElementById('checkbox');
+    // Cari elemen-elemen yang dibutuhkan
+    const themeIconContainer = document.getElementById('theme-icon-container');
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
     const body = document.body;
 
-    // Fungsi untuk menerapkan tema berdasarkan pilihan yang tersimpan
-    const applyTheme = (theme) => {
+    // Fungsi untuk mengatur ikon mana yang aktif (terlihat)
+    const updateIcons = (theme) => {
         if (theme === 'dark') {
-            body.classList.add('dark-mode');
-            themeToggle.checked = true;
+            // Jika tema gelap, ikon matahari yang aktif (untuk beralih ke terang)
+            sunIcon.classList.add('active');
+            moonIcon.classList.remove('active');
         } else {
-            body.classList.remove('dark-mode');
-            themeToggle.checked = false;
+            // Jika tema terang, ikon bulan yang aktif (untuk beralih ke gelap)
+            moonIcon.classList.add('active');
+            sunIcon.classList.remove('active');
         }
     };
 
-    // Cek apakah ada tema yang tersimpan di localStorage saat halaman dimuat
-    const savedTheme = localStorage.getItem('theme');
-    // Jika ada, terapkan tema tersebut. Jika tidak, default ke mode terang.
-    applyTheme(savedTheme || 'light');
-
-    // Tambahkan event listener saat tombol di-klik
-    themeToggle.addEventListener('change', () => {
-        let newTheme;
-        if (themeToggle.checked) {
-            // Jika dicentang, aktifkan mode gelap
-            newTheme = 'dark';
+    // Fungsi untuk menerapkan tema
+    const applyTheme = (theme) => {
+        if (theme === 'dark') {
+            body.classList.add('dark-mode');
         } else {
-            // Jika tidak, aktifkan mode terang
-            newTheme = 'light';
+            body.classList.remove('dark-mode');
         }
+        updateIcons(theme);
+    };
+
+    // Saat halaman dimuat, cek tema yang tersimpan
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(currentTheme);
+
+    // Tambahkan event listener saat kontainer ikon di-klik
+    themeIconContainer.addEventListener('click', () => {
+        // Balikkan tema yang sedang aktif
+        const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
         
         // Simpan pilihan baru ke localStorage
         localStorage.setItem('theme', newTheme);
