@@ -161,35 +161,35 @@ body {
     vertical-align: -2px;
 }
 
-/* ================================================== */
-/* DESAIN BARU UNTUK TABEL JADWAL - Modern & Bersih   */
-/* ================================================== */
+/* ======================================================= */
+/* DESAIN FINAL TABEL JADWAL - Ringkas, Modern & Seimbang  */
+/* ======================================================= */
 
 /* Menggunakan class khusus agar tidak mengganggu tabel lain */
 .custom-schedule-table {
-    border-collapse: separate; /* Memisahkan border untuk styling radius */
+    border-collapse: separate;
     border-spacing: 0;
     width: 100%;
 }
 
-/* Styling untuk Header Tabel (th) */
+/* Styling untuk Header Tabel (th) - Dibuat lebih ringkas */
 .custom-schedule-table th {
-    background-color: #f8f9fa; /* Latar belakang abu-abu sangat terang */
-    color: #495057;            /* Warna teks sedikit gelap */
-    font-size: 0.8rem;         /* Ukuran font sedikit lebih besar & jelas */
-    font-weight: 600;          /* Sedikit tebal */
-    padding: 0.9rem 0.75rem;   /* Padding lebih lega untuk "ruang napas" */
-    text-transform: uppercase; /* Huruf kapital untuk penegasan */
-    letter-spacing: 0.5px;     /* Jarak antar huruf */
-    border-bottom: 2px solid #dee2e6; /* Garis bawah tebal sebagai pemisah */
+    background-color: #f8f9fa;
+    color: #495057;
+    font-size: 0.75rem;         /* FONT diperkecil agar ringkas */
+    font-weight: 600;
+    padding: 0.6rem 0.5rem;     /* PADDING dikurangi agar tidak terlalu besar */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #dee2e6;
 }
 
-/* Styling untuk Sel Data (td) */
+/* Styling untuk Sel Data (td) - Dibuat lebih ringkas */
 .custom-schedule-table td {
-    font-size: 0.85rem;           /* Ukuran font normal agar mudah dibaca */
-    padding: 0.9rem 0.75rem;      /* Padding disamakan dengan header */
-    vertical-align: middle;       /* Teks selalu di tengah */
-    border-top: 1px solid #e9ecef;/* Garis pemisah horizontal yang halus */
+    font-size: 0.8rem;            /* FONT ideal, mudah dibaca tapi tidak besar */
+    padding: 0.6rem 0.5rem;       /* PADDING disamakan agar rapat & seimbang */
+    vertical-align: middle;
+    border-top: 1px solid #e9ecef;
 }
 
 /* Menghilangkan garis atas pada baris data pertama setelah header */
@@ -199,7 +199,7 @@ body {
 
 /* Efek hover pada baris data */
 .custom-schedule-table tbody tr:hover {
-    background-color: #f1f3f5; /* Warna latar sedikit berubah saat disentuh mouse */
+    background-color: #f1f3f5;
 }
 /* Tempat custom style css */
 /* Haykalf.s */
