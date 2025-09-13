@@ -167,10 +167,10 @@ body {
 .table th,
 .table td {
     /* Ukuran font lebih kecil secara default untuk semua device */
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 
     /* Padding (ruang kosong) di dalam sel dikurangi agar lebih rapat */
-    padding: 0.5rem;
+    padding: 0.35rem;
 
     /* Memastikan teks selalu di tengah secara vertikal */
     vertical-align: middle;
