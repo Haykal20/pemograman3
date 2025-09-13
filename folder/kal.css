@@ -369,13 +369,13 @@ body.dark-mode .custom-schedule-table small.text-muted {
 /* STYLE UNTUK IKON TEMA DI SAMPING JUDUL                  */
 /* ======================================================= */
 .theme-icon-container {
-    display: inline-block;
-    position: relative; /* Penting untuk transisi ikon */
-    width: 24px;  /* Sesuaikan lebar kontainer */
-    height: 24px; /* Sesuaikan tinggi kontainer */
-    margin-left: 10px;
+    position: absolute; /* Posisi absolut di dalam header */
+    top: 50%;           /* Turun 50% dari atas */
+    right: 15px;        /* Jarak 15px dari kanan */
+    transform: translateY(-65%); /* Naik lagi 50% dari tingginya sendiri agar pas di tengah */
+    width: 24px;
+    height: 24px;
     cursor: pointer;
-    vertical-align: middle; /* Sejajarkan dengan teks judul */
 }
 
 .theme-icon {
