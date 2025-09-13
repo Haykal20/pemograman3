@@ -370,9 +370,9 @@ body.dark-mode .custom-schedule-table small.text-muted {
 /* ======================================================= */
 .theme-icon-container {
     position: absolute; /* Posisi absolut di dalam header */
-    top: 26%;           /* Turun 50% dari atas */
+    top: 12%;           /* Turun 12% dari atas */
     right: 15px;        /* Jarak 15px dari kanan */
-    transform: translateY(-50%); /* Naik lagi 50% dari tingginya sendiri agar pas di tengah */
+    transform: translateY(-12%); /* Naik lagi 12% dari tingginya sendiri agar pas di tengah */
     width: 24px;
     height: 24px;
     cursor: pointer;
