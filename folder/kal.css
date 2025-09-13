@@ -162,44 +162,88 @@ body {
 }
 
 /* ======================================================= */
-/* DESAIN FINAL TABEL JADWAL - Ringkas, Modern & Seimbang  */
+/* DESAIN FINAL v2: Tabel Hybrid (Rapat di PC, Card di HP) */
 /* ======================================================= */
 
-/* Menggunakan class khusus agar tidak mengganggu tabel lain */
+/* --- (1) Style untuk Desktop & Tampilan Normal --- */
 .custom-schedule-table {
-    border-collapse: separate;
-    border-spacing: 0;
     width: 100%;
+    border-collapse: collapse;
 }
 
-/* Styling untuk Header Tabel (th) - Dibuat lebih ringkas */
+.custom-schedule-table th,
+.custom-schedule-table td {
+    padding: 0.5rem 0.4rem; /* Padding super rapat */
+    font-size: 0.8rem;      /* Font kecil tapi masih terbaca */
+    vertical-align: middle;
+}
+
 .custom-schedule-table th {
     background-color: #f8f9fa;
-    color: #495057;
-    font-size: 0.75rem;         /* FONT diperkecil agar ringkas */
+    font-size: 0.7rem;
     font-weight: 600;
-    padding: 0.6rem 0.5rem;     /* PADDING dikurangi agar tidak terlalu besar */
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: 2px solid #dee2e6;
 }
 
-/* Styling untuk Sel Data (td) - Dibuat lebih ringkas */
-.custom-schedule-table td {
-    font-size: 0.8rem;            /* FONT ideal, mudah dibaca tapi tidak besar */
-    padding: 0.6rem 0.5rem;       /* PADDING disamakan agar rapat & seimbang */
-    vertical-align: middle;
-    border-top: 1px solid #e9ecef;
+.custom-schedule-table tbody tr {
+    border-bottom: 1px solid #f0f0f0; /* Garis pemisah super halus */
 }
 
-/* Menghilangkan garis atas pada baris data pertama setelah header */
-.custom-schedule-table tbody tr:first-child td {
-    border-top: none;
+.custom-schedule-table tbody tr:last-of-type {
+    border-bottom: 2px solid #e0e0e0;
 }
 
-/* Efek hover pada baris data */
-.custom-schedule-table tbody tr:hover {
-    background-color: #f1f3f5;
+
+/* --- (2) Style Ajaib untuk HP (Layar di bawah 768px) --- */
+@media (max-width: 768px) {
+    .custom-schedule-table thead {
+        /* Sembunyikan header tabel di HP, karena info sudah ada di tiap baris */
+        display: none;
+    }
+
+    .custom-schedule-table,
+    .custom-schedule-table tbody,
+    .custom-schedule-table tr,
+    .custom-schedule-table td {
+        /* Ubah semua elemen tabel menjadi block agar bisa diatur seperti card */
+        display: block;
+        width: 100%;
+    }
+
+    .custom-schedule-table tr {
+        /* Setiap baris sekarang menjadi sebuah "card" */
+        margin-bottom: 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden; /* Agar sudutnya rapi */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .custom-schedule-table td {
+        /* Atur tata letak di dalam card */
+        text-align: right; /* Data di kanan */
+        padding-left: 50%; /* Beri ruang untuk label di kiri */
+        position: relative; /* Diperlukan untuk posisi label */
+        border: none;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .custom-schedule-table td:last-child {
+        border-bottom: none;
+    }
+
+    .custom-schedule-table td::before {
+        /* Ini "sihir"-nya: tampilkan isi data-label sebagai judul */
+        content: attr(data-label); /* Ambil teks dari atribut data-label */
+        position: absolute;
+        left: 0.75rem; /* Posisi label di kiri */
+        width: 45%;
+        padding-right: 1rem;
+        text-align: left; /* Label rata kiri */
+        font-weight: bold;
+        color: #333;
+    }
 }
 /* Tempat custom style css */
 /* Haykalf.s */
