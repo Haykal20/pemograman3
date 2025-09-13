@@ -161,24 +161,19 @@ body {
     vertical-align: -2px;
 }
 
-@media (max-width: 768px) {
+/* =============================================== */
+/* Aturan Global untuk Mengecilkan Tabel Jadwal    */
+/* =============================================== */
+.table th,
+.table td {
+    /* Ukuran font lebih kecil secara default untuk semua device */
+    font-size: 0.85rem;
 
-    /* Target semua sel header dan data di dalam tabel */
-    .table th,
-    .table td {
-        /* 1. Perkecil ukuran font agar tidak memakan banyak tempat */
-        font-size: 0.8rem; /* Ukuran default biasanya 1rem */
+    /* Padding (ruang kosong) di dalam sel dikurangi agar lebih rapat */
+    padding: 0.5rem;
 
-        /* 2. Kurangi jarak padding di dalam sel agar lebih rapat */
-        padding: 0.5rem 0.3rem; /* Defaultnya lebih besar */
-    }
-
-    /* Khusus untuk kolom Ruang dan Dosen, buat teksnya sedikit lebih kecil lagi */
-    .table td:nth-child(3), /* Kolom ke-3 (Ruang) */
-    .table td:nth-child(6) { /* Kolom ke-6 (Dosen) */
-        font-size: 0.75rem; /* Sedikit lebih kecil dari yang lain */
-    }
-
+    /* Memastikan teks selalu di tengah secara vertikal */
+    vertical-align: middle;
 }
 /* Tempat custom style css */
 /* Haykalf.s */
